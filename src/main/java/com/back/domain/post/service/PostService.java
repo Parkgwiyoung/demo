@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class PostService {
@@ -15,19 +16,20 @@ public class PostService {
 
     public Post write(String title, String content) {
 
-        Post post = new Post(title, content);
+        Post post = new Post(title,content);
         return postRepository.save(post);
     }
 
-    public Post getPostById(int id) {
-        return postRepository.findById(id).orElse(null);
+    public Optional<Post> findById(int id) {
+        return postRepository.findById(id);
     }
 
-    public List<Post> getAllPosts() {
+    public List<Post> findAll() {
         return postRepository.findAll();
     }
 
-    public long count(){
+    public long count() {
         return postRepository.count();
     }
+
 }
