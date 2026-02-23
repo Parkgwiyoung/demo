@@ -23,10 +23,10 @@ public class PostService {
 
     @Transactional
     public Post modify(Post post, String newTitle, String newContent) {
-
         post.setTitle(newTitle);
         post.setContent(newContent);
-        return postRepository.save(post);
+        //return postRepository.save(post);
+        return post;
     }
 
     public Optional<Post> findById(int id) {
