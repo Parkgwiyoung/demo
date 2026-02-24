@@ -5,8 +5,8 @@ spring:
   application:
     name: back
 
-    profiles:
-      active: dev
+  profiles:
+    active: dev
 
   output:
     ansi:
